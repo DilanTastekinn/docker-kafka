@@ -1,0 +1,13 @@
+docker-compose.yaml yazıyoruz.
+docker-compose up
+Yeni bash açıp 
+docker exec -it kafka /opt/bitnami/kafka/bin/kafka-topics.sh \
+--create \
+--zookeeper zookeeper:2181 \
+--replication-factor 1 \
+--partitions 1 \
+--topic test
+Yukarıdakini yazdıktan sonra terminal *created topic test* dönüşünü yapacak.
+Daha sonra npm init -y 
+npm install node-rdkafka@2.10.1
+npm install avsc
