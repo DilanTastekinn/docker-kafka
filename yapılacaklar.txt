@@ -11,3 +11,6 @@ Yukarıdakini yazdıktan sonra terminal *created topic test* dönüşünü yapac
 Daha sonra npm init -y 
 npm install node-rdkafka@2.10.1
 npm install avsc
+Çalışan portların kontrolü için nestat -tulpn
+İmage i çalıştırdığımızda elde ettiğimiz process container dır.İMAGE ROADMAP tir.
+npm run start:consumer
