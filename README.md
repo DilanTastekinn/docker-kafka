@@ -25,13 +25,20 @@ Tek bir protokol kullanılıyor.(Native Kafka Protocol)
 
 # Apache Kafka Kurulum komutları
 
-$wget -O- https://apt.corretto.aws/corretto.key | sudo apt-key add - 
+$wget -O- https://apt.corretto.aws/corretto.key | sudo apt-key add -
+
 $sudo add-apt-repository 'deb https://apt.corretto.aws stable main'
+
 $sudo apt-get update; sudo apt-get install -y java-11-amazon-corretto-jdk
+
 $wget https://archive.apache.org/dist/kafka/3.0.0/kafka_2.13-3.0.0.tgz
+
 $tar xzf kafka_2.13-3.0.0.tgz
+
 $mv kafka_2.13-3.0.0 ~
+
 $~/kafka_2.13-3.0.0/bin/zookeeper-server-start.sh ~/kafka_2.13-3.0.0/config/zookeeper.properties
+
 $~/kafka_2.13-3.0.0/bin/kafka-server-start.sh ~/kafka_2.13-3.0.0/config/server.properties
 
 ## Projeyi Çalıştırabilmek için
@@ -39,6 +46,7 @@ $~/kafka_2.13-3.0.0/bin/kafka-server-start.sh ~/kafka_2.13-3.0.0/config/server.p
 docker-compose.yaml yazıyoruz.
 $docker-compose up
 Yeni bash açıp
+
 $docker exec -it kafka /opt/bitnami/kafka/bin/kafka-topics.sh \
 --create \
 --zookeeper zookeeper:2181 \
@@ -47,8 +55,11 @@ $docker exec -it kafka /opt/bitnami/kafka/bin/kafka-topics.sh \
 --topic test
 Yukarıdakini yazdıktan sonra terminal _created topic test_ dönüşünü yapacak.
 Daha sonra $npm init -y 
+
 $npm install node-rdkafka@2.10.1
+
 $npm install avsc
+
 Çalışan portların kontrolü için $nestat -tulpn
 
 **Apache Kafkaye giden ve gelen mesajları görebilip projeyi aktif edebilmek için**
